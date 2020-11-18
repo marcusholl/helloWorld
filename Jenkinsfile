@@ -3,6 +3,7 @@
 node() {
   stage('init') {
     deleteDir()
+    checkout scm
   }
   stage('prepare piper') {
     dockerExecuteOnKubernetes(script: this, dockerImage: 'golang:1.15') {
