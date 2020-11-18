@@ -9,6 +9,8 @@ node() {
       sh """|#!/bin/bash
             |git clone https://github.com/marcusholl/jenkins-library piperlib
             |cd piperlib
+            |git remote -v
+            |git branch -r
             |git checkout origin/helloworld
             |go build -o piper .
             |mv piper ..
