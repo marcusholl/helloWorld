@@ -2,7 +2,7 @@
 
 node() {
   stage('prepare piper') {
-    dockerExecuteOnKubernetes(script: this dockerImage: 'golang:1.15') {
+    dockerExecuteOnKubernetes(script: this, dockerImage: 'golang:1.15') {
       sh "echo hello; whoami; ls -la; pwd"
     }
   }
