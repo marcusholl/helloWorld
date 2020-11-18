@@ -6,7 +6,7 @@ node() {
   }
   stage('prepare piper') {
     dockerExecuteOnKubernetes(script: this, dockerImage: 'golang:1.15') {
-      sh "echo hello; whoami; ls -la; pwd"
+      sh "echo hello; whoami; ls -la; pwd; which git"
     }
   }
   stage('Hello World') {
