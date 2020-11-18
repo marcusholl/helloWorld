@@ -6,7 +6,7 @@ node() {
   }
   stage('prepare piper') {
     dockerExecuteOnKubernetes(script: this, dockerImage: 'golang:1.15') {
-      sh """|#!/bin/bash
+      sh """|#!/bin/bash -e
             |git clone https://github.com/marcusholl/jenkins-library piperlib
             |cd piperlib
             |git checkout origin/helloWorld
